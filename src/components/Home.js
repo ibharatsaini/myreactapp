@@ -28,7 +28,8 @@ export default function Home(){
             console.log("inside")
             const response = await contract.mintNft(utils.getAddress(accounts[0]),"https://gateway.pinata.cloud/ipfs/QmaXV7A6EZ32pccTGAc7cQSKtbfATq6RXzGAR7pyn17Dzo",{
                 gasLimit:500000,
-                gasPrice:utils.parseUnits('50.0','gwei')
+                gasPrice:utils.parseUnits('50.0','gwei'),
+                chainId: 4
             })
             console.log(response)
         }catch(err){
@@ -43,7 +44,7 @@ export default function Home(){
                 <div className='imgClass'>
                     <img src="/scenery.jpg"></img>
                 </div>
-                <span>Name : NFT test</span>
+                <span>Name : NFT test token</span>
                 <div className='but' onClick={clickEvent}>Click to Mint</div>
             </div>
              {/* <button onClick={clickEvent}/>
